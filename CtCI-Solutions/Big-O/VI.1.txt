@@ -1,0 +1,39 @@
+QUESTION VI.1:
+The following code computes the product of a and b. What is its runtime?
+    int product(int a, int b) {
+        int sum = 0
+        for (int i = 0; i < b; i++) {
+            sum += a
+        }
+        return sum;
+    }
+
+ANSWER:
+The for loop inside product iterates b times (0, 1, 2, ..., b-2, b-1) so time
+complexity is O(b)
+
+QUESTION VI.2:
+The following code computes a^b. What is its runtime?
+    int power(int a, int b) {
+        if (b < 0) {
+            return 0; // error
+        } else if (b == 0) {
+            return 1;
+        } else {
+            return a * power(a, b - 1);
+        }
+    }
+
+ANSWER:
+    The recursion occur b times, so O(n)
+
+QUESTION VI.3:
+The following code computes a % b. What is its runtime?
+    int mod(int a, int b) {
+        if (b <= 0) {
+            return -1;
+        }
+        int div = a / b;
+        return a - div * b;
+    }
+    
