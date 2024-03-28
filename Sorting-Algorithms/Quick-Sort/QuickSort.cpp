@@ -38,6 +38,15 @@ void quick_sort(std::vector<int>& A, int beg, int end)
     }
 }
 
+void TRE_quick_sort(std::vector<int>& A, int beg, int end)
+[
+    while(beg < end){
+        int mid = partition(A, beg, end);
+        TRE_quick_sort(A, beg, end);
+        beg = mid + 1
+    }
+]
+
 //Random pivoting variant
 
 int random_pivot(int a, int b)
