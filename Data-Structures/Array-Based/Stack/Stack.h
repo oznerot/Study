@@ -19,11 +19,18 @@ class Stack{
             _arr = temp;
         }
 
+        void initialize()
+        {
+            _size = 0;
+            _capacity = 1;
+            _arr = new T[1];
+        }
 
     public:
-        Stack() : _arr(nullptr), _size(0), _capacity(0) {}
-        Stack(const size_t size) : _arr(new T[size]), _size(size), _capacity(size)
+        Stack() : _arr(nullptr), _size(0), _capacity(0){}
+        Stack(const size_t size) : _size(size), _capacity(size)
         {
+            size == 0 ? _arr = nullptr : _arr = new T[size];
             std::fill(_arr, _arr + _size, T());
         }
 
@@ -38,7 +45,10 @@ class Stack{
 
         void push_back(const T value)
         {
-            if (_size == _capacity)
+            if(_arr == nullptr)
+                initialize();
+                
+            if(_size == _capacity)
                 increase_capacity();
 
             _size++;

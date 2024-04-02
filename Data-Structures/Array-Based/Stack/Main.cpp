@@ -17,7 +17,7 @@ void stack_status(Stack<TYPE>& S)
 
 int main(int argc, char** argv)
 {
-    Stack<TYPE> stack(10, 5);
+    Stack<TYPE> stack;
     stack_status(stack);
 
     for(size_t i = 0; i < stack.size(); i++)
