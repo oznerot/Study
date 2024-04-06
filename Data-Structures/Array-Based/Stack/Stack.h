@@ -27,7 +27,7 @@ class Stack{
         }
 
     public:
-        Stack() : _arr(nullptr), _size(0), _capacity(0){}
+        Stack() : _arr(nullptr), _size(0), _capacity(0), _head(0), _tail(0){}
         Stack(const size_t size) : _size(size), _capacity(size)
         {
             size == 0 ? _arr = nullptr : _arr = new T[size];
